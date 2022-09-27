@@ -5,8 +5,13 @@ using UnityEngine.EventSystems;
 
 public class Tile : MonoBehaviour, IPointerClickHandler
 {
+    private Board _board;
+
+    private void OnEnable()
+        =>  _board = FindObjectOfType<Board>();
+   
+
     public void OnPointerClick(PointerEventData eventData)
-    {
-        Debug.Log("Tile Clicked");
-    }
+        =>  _board.Select(this);
+    
 }

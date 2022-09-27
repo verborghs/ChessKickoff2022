@@ -108,6 +108,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6029662354377841819, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
+      propertyPath: _offsets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029662354377841819, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
+      propertyPath: _offsets.Array.data[0].y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8651917271849898653, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
       propertyPath: m_Name
       value: PawnBase
