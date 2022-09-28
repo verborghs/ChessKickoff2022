@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,5 +14,7 @@ public class Tile : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
         =>  _board.Select(this);
-    
+
+    public void Highlight()
+        => Debug.Log($"Tile {gameObject.name} Highlighted");
 }

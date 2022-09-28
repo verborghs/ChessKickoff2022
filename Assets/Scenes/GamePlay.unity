@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291827364190325124, guid: f744b7376c8bab04097451a50baf94aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2291827364190325124, guid: f744b7376c8bab04097451a50baf94aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1288,7 +1288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2291827364190325124, guid: f744b7376c8bab04097451a50baf94aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2291827364190325124, guid: f744b7376c8bab04097451a50baf94aa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2085,6 +2085,9 @@ MonoBehaviour:
   _piecesLayer:
     serializedVersion: 2
     m_Bits: 64
+  _tilesLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &2103439744
 PrefabInstance:
   m_ObjectHideFlags: 0

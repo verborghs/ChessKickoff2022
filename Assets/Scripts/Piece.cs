@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Piece : MonoBehaviour
+public abstract class Piece : MonoBehaviour
 {
-    public void Activate()
-    {
-        Debug.Log("Piece Activated");
-    }
+    protected Board Board;
+
+    private void OnEnable()
+        => Board = FindObjectOfType<Board>();
+
+    public abstract void Activate();
+    
 }
