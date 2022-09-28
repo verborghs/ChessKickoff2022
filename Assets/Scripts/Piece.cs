@@ -13,5 +13,9 @@ public abstract class Piece : MonoBehaviour
     public abstract void Activate();
 
     public abstract bool Move(Tile tile);
-    
+
+    public void Take()
+    {
+        gameObject.SetActive(false);
+    }
 }

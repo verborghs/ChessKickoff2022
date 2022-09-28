@@ -69,6 +69,10 @@ public class Pawn : Piece
         if (!_activatedTiles.Contains(tile))
             return false;
 
+        var piece = Board.GetPieceAt(tile.transform.position);
+        if (piece != null)
+            piece.Take();
+
         transform.position = tile.transform.position;
 
         foreach (var activatedTile in _activatedTiles)
