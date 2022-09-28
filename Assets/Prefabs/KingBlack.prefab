@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KingBlack
       objectReference: {fileID: 0}
+    - target: {fileID: 1370897962308317871, guid: 676eeca4ff484b8488f09f5581ad7929, type: 3}
+      propertyPath: _player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5765882208749632781, guid: 676eeca4ff484b8488f09f5581ad7929, type: 3}
       propertyPath: m_RootOrder
       value: 0

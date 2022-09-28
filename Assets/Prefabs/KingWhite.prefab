@@ -13,7 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126360a0747f4a04caf69bf42df0dc54, type: 2}
     - target: {fileID: 1076666891607353114, guid: 676eeca4ff484b8488f09f5581ad7929, type: 3}
       propertyPath: m_Name
-      value: KingBase
+      value: KingWhite
+      objectReference: {fileID: 0}
+    - target: {fileID: 1370897962308317871, guid: 676eeca4ff484b8488f09f5581ad7929, type: 3}
+      propertyPath: _player
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5765882208749632781, guid: 676eeca4ff484b8488f09f5581ad7929, type: 3}
       propertyPath: m_RootOrder

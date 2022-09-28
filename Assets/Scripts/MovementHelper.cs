@@ -20,13 +20,21 @@ public class MovementHelper
         _piece = piece;
     }
 
-    public MovementHelper Up(int maxSteps = int.MaxValue) => Collect(_piece.transform.forward);
+    public MovementHelper Up(int maxSteps = int.MaxValue) => Collect(_piece.transform.forward, maxSteps);
 
-    public MovementHelper Down(int maxSteps = int.MaxValue) => Collect(-_piece.transform.forward);
+    public MovementHelper Down(int maxSteps = int.MaxValue) => Collect(-_piece.transform.forward, maxSteps);
 
-    public MovementHelper Left(int maxSteps = int.MaxValue) => Collect(-_piece.transform.right);
+    public MovementHelper Left(int maxSteps = int.MaxValue) => Collect(-_piece.transform.right, maxSteps);
 
-    public MovementHelper Right(int maxSteps = int.MaxValue) => Collect(_piece.transform.right);
+    public MovementHelper Right(int maxSteps = int.MaxValue) => Collect(_piece.transform.right, maxSteps);
+
+    public MovementHelper UpLeft(int maxSteps = int.MaxValue) => Collect(_piece.transform.forward - _piece.transform.right, maxSteps);
+
+    public MovementHelper UpRight(int maxSteps = int.MaxValue) => Collect(_piece.transform.forward + _piece.transform.right, maxSteps);
+
+    public MovementHelper DownLeft(int maxSteps = int.MaxValue) => Collect(-_piece.transform.forward  - _piece.transform.right, maxSteps);
+
+    public MovementHelper DownRight(int maxSteps = int.MaxValue) => Collect(-_piece.transform.forward + _piece.transform.right, maxSteps);
 
     public MovementHelper Collect(Vector3 direction, int maxSteps = int.MaxValue)
     {
