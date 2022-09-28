@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PawnBlack
       objectReference: {fileID: 0}
+    - target: {fileID: 4813304185331206621, guid: 95d2cb4a385770e48a9409052facb647, type: 3}
+      propertyPath: _player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7316117322633069783, guid: 95d2cb4a385770e48a9409052facb647, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -13,7 +13,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126360a0747f4a04caf69bf42df0dc54, type: 2}
     - target: {fileID: 4286723664558841536, guid: 95d2cb4a385770e48a9409052facb647, type: 3}
       propertyPath: m_Name
-      value: PawnBase
+      value: PawnWhite
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813304185331206621, guid: 95d2cb4a385770e48a9409052facb647, type: 3}
+      propertyPath: _player
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7316117322633069783, guid: 95d2cb4a385770e48a9409052facb647, type: 3}
       propertyPath: m_RootOrder

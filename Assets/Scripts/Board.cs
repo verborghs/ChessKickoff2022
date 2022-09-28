@@ -11,6 +11,8 @@ public class Board : MonoBehaviour
     [SerializeField]
     private LayerMask _tilesLayer;
 
+    private Player _currentPlayer = Player.Player1;
+
     private Piece _selectedPiece;
     private List<Tile> _validTiles = new List<Tile>();
 
@@ -20,7 +22,12 @@ public class Board : MonoBehaviour
 
         if (_validTiles.Contains(tile))
         {
+            var targetPiece = GetPieceAt(tile.transform.position);
+            targetPiece?.Take();
+
+
             _selectedPiece.Move(tile);
+            _currentPlayer = (_currentPlayer == Player.Player1) ? Player.Player2 : Player.Player1;
 
             ResetState();
         }
@@ -64,9 +71,12 @@ public class Board : MonoBehaviour
 
     private void TrySelectPiece(Tile tile)
     {
-        _selectedPiece = GetPieceAt(tile.transform.position);
-        if (_selectedPiece != null)
+        var selectedPiece = GetPieceAt(tile.transform.position);
+        if (selectedPiece != null && selectedPiece.Player == _currentPlayer)
+        {
+            _selectedPiece = selectedPiece;
             _validTiles = _selectedPiece.GetValidTiles();
+        }
     }
 
     private void ActivateValidTiles()

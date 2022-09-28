@@ -5,7 +5,12 @@ using UnityEngine;
 
 public abstract class Piece : MonoBehaviour
 {
+    [SerializeField]
+    private Player _player;
+
     protected Board Board;
+
+    public Player Player => _player;
 
     private void OnEnable()
         => Board = FindObjectOfType<Board>();
