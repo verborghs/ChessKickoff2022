@@ -9,76 +9,50 @@ public class Pawn : Piece
 {
     private bool _hasMoved = false;
 
-    private List<Tile> _activatedTiles = new List<Tile>();
-    public override void Activate()
+    public override List<Tile> GetValidTiles()
     {
-        _activatedTiles.Clear();
-
+        List<Tile> activatedTiles = new List<Tile>();
         var tile1 = Board.GetTileAt(transform.position + transform.forward);
         if (tile1 != null)
         {
             var piece1 = Board.GetPieceAt(tile1.transform.position);
             if (piece1 == null)
             {
-                _activatedTiles.Add(tile1);
-                tile1.Highlight();
+                activatedTiles.Add(tile1);
 
                 if (!_hasMoved)
                 {
                     var tile2 = Board.GetTileAt(transform.position + 2 * transform.forward);
                     if (tile2 != null)
                     {
-
                         var piece2 = Board.GetPieceAt(tile2.transform.position);
                         if (piece2 == null)
-                        {
-                            _activatedTiles.Add(tile2);
-                            tile2.Highlight();
-                        }
+                            activatedTiles.Add(tile2);
                     }
                 }
             }
+
+            var tile3 = Board.GetTileAt(transform.position + transform.forward + transform.right);
+            if (tile3 != null)
+            {
+                var piece3 = Board.GetPieceAt(tile3.transform.position);
+                if (piece3 != null)
+                    activatedTiles.Add(tile3);
+            }
+            
+            var tile4 = Board.GetTileAt(transform.position + transform.forward - transform.right);
+            if (tile4 != null)
+            {
+                var piece4 = Board.GetPieceAt(tile4.transform.position);
+                if (piece4 != null)
+                    activatedTiles.Add(tile4);
+            }
+
+            
         }
 
-        var tile3 = Board.GetTileAt(transform.position + transform.forward + transform.right);
-        if (tile3 != null)
-        {
-            var piece3 = Board.GetPieceAt(tile3.transform.position);
-            if (piece3 != null)
-            {
-                _activatedTiles.Add(tile3);
-                tile3.Highlight();
-            }
-        }
-
-        var tile4 = Board.GetTileAt(transform.position + transform.forward - transform.right);
-        if (tile4 != null)
-        {
-            var piece4 = Board.GetPieceAt(tile4.transform.position);
-            if (piece4 != null)
-            {
-                _activatedTiles.Add(tile4);
-                tile4.Highlight();
-            }
-                
-        }
+        return activatedTiles;
     }
 
-    public override bool Move(Tile tile)
-    {
-        if (!_activatedTiles.Contains(tile))
-            return false;
-
-        var piece = Board.GetPieceAt(tile.transform.position);
-        if (piece != null)
-            piece.Take();
-
-        transform.position = tile.transform.position;
-
-        foreach (var activatedTile in _activatedTiles)
-            activatedTile.UnHighlight();
-
-        return true;
-    }
 }
 

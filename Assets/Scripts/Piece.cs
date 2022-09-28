@@ -10,12 +10,13 @@ public abstract class Piece : MonoBehaviour
     private void OnEnable()
         => Board = FindObjectOfType<Board>();
 
-    public abstract void Activate();
+    public abstract List<Tile> GetValidTiles();
 
-    public abstract bool Move(Tile tile);
+    public void Move(Tile tile)
+        => transform.position = tile.transform.position;
+    
 
     public void Take()
-    {
-        gameObject.SetActive(false);
-    }
+        => gameObject.SetActive(false);
+    
 }

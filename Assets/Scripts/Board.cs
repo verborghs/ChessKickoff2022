@@ -12,19 +12,23 @@ public class Board : MonoBehaviour
     private LayerMask _tilesLayer;
 
     private Piece _selectedPiece;
+    private List<Tile> _validTiles = new List<Tile>();
 
     public void Select(Tile tile)
     {
-        if (_selectedPiece)
+        DeactivateValidTiles();
+
+        if (_validTiles.Contains(tile))
         {
-            if (_selectedPiece.Move(tile))
-                _selectedPiece = null;
-                
+            _selectedPiece.Move(tile);
+
+            ResetState();
         }
         else
         {
-            _selectedPiece = GetPieceAt(tile.transform.position);
-            _selectedPiece?.Activate();
+            TrySelectPiece(tile);
+
+            ActivateValidTiles();
         }
     }
 
@@ -51,4 +55,31 @@ public class Board : MonoBehaviour
 
         return null;
     }
+
+    private void ResetState()
+    {
+        _selectedPiece = null;
+        _validTiles.Clear();
+    }
+
+    private void TrySelectPiece(Tile tile)
+    {
+        _selectedPiece = GetPieceAt(tile.transform.position);
+        if (_selectedPiece != null)
+            _validTiles = _selectedPiece.GetValidTiles();
+    }
+
+    private void ActivateValidTiles()
+    {
+        foreach (var tile in _validTiles)
+            tile.Highlight();
+    }
+
+    private void DeactivateValidTiles()
+    {
+        foreach (var tile in _validTiles)
+            tile.UnHighlight();
+    }
 }
+
+
