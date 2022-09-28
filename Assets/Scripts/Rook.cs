@@ -8,14 +8,12 @@ public class Rook : Piece
 {
     public override List<Tile> GetValidTiles()
     {
-        List<Tile> activatedTiles = new List<Tile>();
-        Up(activatedTiles);
-        Down(activatedTiles);
-        Left(activatedTiles);
-        Right(activatedTiles);
-
-
-        return activatedTiles;
+        var movementHelper = new MovementHelper(Board, this);
+        movementHelper.Up();
+        movementHelper.Down();
+        movementHelper.Left();
+        movementHelper.Right();
+        return movementHelper.ActivatedTiles;
     }
 
     private void Up(List<Tile> activatedTiles)
