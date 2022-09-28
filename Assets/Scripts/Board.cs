@@ -11,10 +11,21 @@ public class Board : MonoBehaviour
     [SerializeField]
     private LayerMask _tilesLayer;
 
+    private Piece _selectedPiece;
+
     public void Select(Tile tile)
     {
-        var piece = GetPieceAt(tile.transform.position);
-        piece?.Activate();
+        if (_selectedPiece)
+        {
+            if (_selectedPiece.Move(tile))
+                _selectedPiece = null;
+                
+        }
+        else
+        {
+            _selectedPiece = GetPieceAt(tile.transform.position);
+            _selectedPiece?.Activate();
+        }
     }
 
     public Piece GetPieceAt(Vector3 position)

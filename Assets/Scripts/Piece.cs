@@ -11,5 +11,7 @@ public abstract class Piece : MonoBehaviour
         => Board = FindObjectOfType<Board>();
 
     public abstract void Activate();
+
+    public abstract bool Move(Tile tile);
     
 }
