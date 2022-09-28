@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8651917271849898653, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
       propertyPath: m_Name
-      value: RookBase Variant
+      value: RookBase
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
@@ -119,3 +119,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2802463203626584202, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
   m_PrefabInstance: {fileID: 2824906116307848328}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6856129886402485781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8651917271849898653, guid: 5f297837b4cdfb84b84888d78cb3b337, type: 3}
+  m_PrefabInstance: {fileID: 2824906116307848328}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5586111178807136883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6856129886402485781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982374b923711c04686bcf28e7e45377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: 0

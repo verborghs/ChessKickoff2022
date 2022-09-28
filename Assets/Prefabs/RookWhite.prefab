@@ -55,9 +55,13 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 126360a0747f4a04caf69bf42df0dc54, type: 2}
+    - target: {fileID: 5586111178807136883, guid: bd7268167129e084c871a9fe57ab8c67, type: 3}
+      propertyPath: _player
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6856129886402485781, guid: bd7268167129e084c871a9fe57ab8c67, type: 3}
       propertyPath: m_Name
-      value: RookBase
+      value: RookWhite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd7268167129e084c871a9fe57ab8c67, type: 3}
