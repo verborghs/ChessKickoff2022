@@ -20,19 +20,20 @@ public class MovementHelper
         _piece = piece;
     }
 
-    public void Up() => Collect(_piece.transform.forward);
+    public MovementHelper Up(int maxSteps = int.MaxValue) => Collect(_piece.transform.forward);
 
-    public void Down() => Collect(-_piece.transform.forward);
+    public MovementHelper Down(int maxSteps = int.MaxValue) => Collect(-_piece.transform.forward);
 
-    public void Left() => Collect(-_piece.transform.right);
+    public MovementHelper Left(int maxSteps = int.MaxValue) => Collect(-_piece.transform.right);
 
-    public void Right() => Collect(_piece.transform.right);
+    public MovementHelper Right(int maxSteps = int.MaxValue) => Collect(_piece.transform.right);
 
-    public void Collect(Vector3 direction)
+    public MovementHelper Collect(Vector3 direction, int maxSteps = int.MaxValue)
     {
         
         var tile = _board.GetTileAt(_piece.transform.position + direction);
-        while (tile != null)
+        var step = 1;
+        while (tile != null && step <= maxSteps)
         {
             var piece = _board.GetPieceAt(tile.transform.position);
             if (piece == null || piece.Player != _piece.Player)
@@ -44,7 +45,10 @@ public class MovementHelper
 
 
             tile = _board.GetTileAt(tile.transform.position + direction);
+            step++;
         }
+
+        return this;
     }
 
     
