@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8348116222642851579, guid: b7dbb5d9722af59429b30a44c5555e0f, type: 3}
+      propertyPath: _player
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1609444831303812738, guid: b7dbb5d9722af59429b30a44c5555e0f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 126360a0747f4a04caf69bf42df0dc54, type: 2}
     - target: {fileID: 5233310375945559189, guid: b7dbb5d9722af59429b30a44c5555e0f, type: 3}
       propertyPath: m_Name
-      value: KnightBase
+      value: KnightWhite
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7dbb5d9722af59429b30a44c5555e0f, type: 3}

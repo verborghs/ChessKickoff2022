@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2077815398114320826, guid: 85ad2a9eb91bad54c84ef15ef934697e, type: 3}
       propertyPath: m_Name
-      value: QueenBase
+      value: QueenWhite
       objectReference: {fileID: 0}
     - target: {fileID: 2470879839009563732, guid: 85ad2a9eb91bad54c84ef15ef934697e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -57,6 +57,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4764935520475872173, guid: 85ad2a9eb91bad54c84ef15ef934697e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175739996112411158, guid: 85ad2a9eb91bad54c84ef15ef934697e, type: 3}
+      propertyPath: _player
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
