@@ -11,48 +11,20 @@ public class Pawn : Piece
 
     public override List<Tile> GetValidTiles()
     {
-        List<Tile> activatedTiles = new List<Tile>();
-        var tile1 = Board.GetTileAt(transform.position + transform.forward);
-        if (tile1 != null)
-        {
-            var piece1 = Board.GetPieceAt(tile1.transform.position);
-            if (piece1 == null)
-            {
-                activatedTiles.Add(tile1);
+        MovementHelper.TileValidator empty = (b, p, t) => Board.GetPieceAt(t.transform.position) == null;
 
-                if (!_hasMoved)
-                {
-                    var tile2 = Board.GetTileAt(transform.position + 2 * transform.forward);
-                    if (tile2 != null)
-                    {
-                        var piece2 = Board.GetPieceAt(tile2.transform.position);
-                        if (piece2 == null)
-                            activatedTiles.Add(tile2);
-                    }
-                }
-            }
-
-            var tile3 = Board.GetTileAt(transform.position + transform.forward + transform.right);
-            if (tile3 != null)
-            {
-                var piece3 = Board.GetPieceAt(tile3.transform.position);
-                if (piece3 != null)
-                    activatedTiles.Add(tile3);
-            }
-            
-            var tile4 = Board.GetTileAt(transform.position + transform.forward - transform.right);
-            if (tile4 != null)
-            {
-                var piece4 = Board.GetPieceAt(tile4.transform.position);
-                if (piece4 != null)
-                    activatedTiles.Add(tile4);
-            }
-
-            
-        }
-
-        return activatedTiles;
+        return new MovementHelper(Board, this)
+            .Up(1, empty)
+            .UpLeft(1, HasEnemy)
+            .UpRight(1, HasEnemy)
+            .Up(2, (b,p,t) => !_hasMoved, empty)
+            .ActivatedTiles;       
     }
 
+    public bool HasEnemy(Board b, Piece p, Tile t)
+    {
+        var piece = Board.GetPieceAt(t.transform.position);
+        return piece != null && piece.Player != p.Player;
+    }
 }
 
